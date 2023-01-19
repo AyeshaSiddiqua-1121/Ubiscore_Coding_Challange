@@ -4,7 +4,6 @@ import SignUpBox from './components/Boxes/SignUpBox';
 import SignUpSuccess from './components/Pages/SignUpSuccess';
 function App() {
 const [isFormSubmit, setIsFormSubmit] = useState(false);
-
   return (
     <div className="app">
       <div className="flex w-full h-full lg:flex-row flex-col">
@@ -19,7 +18,7 @@ const [isFormSubmit, setIsFormSubmit] = useState(false);
                 amet sint. Velit officia consequat duis enim velit mollit”
               </p>
             </div>
-            <div className="absolute bottom-0 right-[-100px]">
+            <div className="absolute bottom-0 right-[-20px]">
               <div className="w-20 h-20 bg-opacity-10 bg-gray-400 rounded-full   "></div>
             </div>
 
@@ -38,7 +37,7 @@ const [isFormSubmit, setIsFormSubmit] = useState(false);
         <div className="lg:w-1/2 w-full flex justify-center">
           {isFormSubmit ? (
             <>
-            <SignUpSuccess />
+            <SignUpSuccess setIsFormSubmit={setIsFormSubmit} />
             </>
           ) : (
             <>

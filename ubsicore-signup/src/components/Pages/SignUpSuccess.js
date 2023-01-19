@@ -1,7 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import logo from '../../assets/logo.jpg'
-function SignUpSuccess() {
+function SignUpSuccess(props) {
+    const {
+        setIsFormSubmit
+    }=props
+    const handleBackToHome=()=>{
+        setIsFormSubmit(false)
+    }
     // Getting store element
   const selectedUser = useSelector((state) => state.signup.selectedUser)
   return (
@@ -21,7 +27,7 @@ function SignUpSuccess() {
         <div>
           <div className="flex flex-col  mt-10">
             <button
-              type="submit"
+              onClick={handleBackToHome}
               className="bg-blue hover:bg-dark-blue text-white font-normal py-4 px-4 rounded w-3/4"
             >
              Back to Home
